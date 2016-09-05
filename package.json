@@ -1,6 +1,6 @@
 {
   "name": "redux-sword",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "To avoid reducer code for Redux",
   "main": "index.js",
   "scripts": {
