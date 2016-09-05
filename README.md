@@ -2,6 +2,14 @@
 
 `Redux-Sword` is a tool for `Redux Reducer`, which can make it automatically processed, so you can code less with it.
 
+### Installation
+
+To install the stable version:
+
+```
+npm install --save redux
+```
+
 ### How to Use?
 
 `index.js` for combine reducers

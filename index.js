@@ -1,3 +1,3 @@
 module.exports = {
-	equipSword: require('./lib/equipSword');
+	equipSword: require('./lib/equipSword')
 };
