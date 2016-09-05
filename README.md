@@ -7,7 +7,7 @@
 To install the stable version:
 
 ```
-npm install --save redux
+npm install --save-dev redux-sword
 ```
 
 ### How to Use?
