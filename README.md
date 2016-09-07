@@ -14,6 +14,53 @@ npm install --save-dev redux-sword
 
 ### How to Use?
 
+reducer's definition
+
+```js
+
+import {combineReducers} from 'redux'
+import {equipSword} from 'redux-sword'
+
+const initailStateMain = {
+    userName: '',
+    userNick: '',
+    isLogined: false,
+};
+
+const initailStateProject = {
+    projectId: 0,
+    projectName: ''
+};
+
+const reducers = combineReducers(equipSword({
+    main : initailStateMain,
+    project: initailStateProject
+}));
+
+export default reducers;
+
+```
+
+dispatch useage
+
+```js
+
+dispatch({
+    type: 'ON_LOGIN', 
+
+    // 'main' is your reducer name, 
+    // automatically process use this to match your reducer
+    main: { 
+        userName: 'maoshuchen',
+        userNick: 'somewind',
+        isLogined: true
+    }
+});
+
+```
+
+### More
+
 `index.js` for combine reducers
 
 ```js
@@ -49,28 +96,28 @@ const initailState = {
 
 export default function (state = initailState, action) {
     switch (action.type) {
-    	//1.The following code can be automatically processed
-    	//case 'ON_LOGIN':
-    	//	return {
-    	//		...state,
-    	//		userName: action.main.userName,
-    	//		userNick: action.main.userNick,
-    	//		isLogined: action.main.isLogined,
-    	//	}
-    	//	break;
+        //1.The following code can be automatically processed
+        //case 'ON_LOGIN':
+        //  return {
+        //      ...state,
+        //      userName: action.main.userName,
+        //      userNick: action.main.userNick,
+        //      isLogined: action.main.isLogined,
+        //  }
+        //  break;
 
-    	//2.If you have some logic code just like the following code has 'if(action.isLogoutSuccess)', 
-    	//you can write the case, the automatically process can be override.
-    	case 'ON_LOGOUT':
-    		if(action.isLogoutSuccess){
-	    		return {
-	    			...state,
-	    			userName: '',
-	    			userNick: '',
-	    			isLogined: false
-	    		}
-    		}
-    		break;
+        //2.If you have some logic code just like the following code has 'if(action.isLogoutSuccess)', 
+        //you can write the case, the automatically process can be override.
+        case 'ON_LOGOUT':
+            if(action.isLogoutSuccess){
+                return {
+                    ...state,
+                    userName: '',
+                    userNick: '',
+                    isLogined: false
+                }
+            }
+            break;
         default :
             return state;
     }
@@ -83,51 +130,18 @@ dispatch useage
 ```js
 
 dispatch({
-	type: 'ON_LOGIN', 
+    type: 'ON_LOGIN', 
 
-	// 'main' is your reducer name, 
-	// automatically process use this to match your reducer
-	main: { 
-		userName: 'maoshuchen',
-		userNick: 'somewind',
-		isLogined: true
-	}
+    // 'main' is your reducer name, 
+    // automatically process use this to match your reducer
+    main: { 
+        userName: 'maoshuchen',
+        userNick: 'somewind',
+        isLogined: true
+    }
 });
 
 ```
-
-### The Most Code Less
-
-You can modify `index.js` for combine reducers, so you can no need `main.js` and `project.js` any more.
-
-```js
-
-import {combineReducers} from 'redux'
-import {equipSword} from 'redux-sword'
-
-const initailStateMain = {
-    userName: '',
-    userNick: '',
-    isLogined: false,
-};
-
-const initailStateProject = {
-    projectId: 0,
-    projectName: ''
-};
-
-const reducers = combineReducers(equipSword({
-    main : initailStateMain,
-    project: initailStateProject
-}));
-
-export default reducers;
-
-```
-
-### At Last
-
-Have fun.
 
 ### License
 
