@@ -116,10 +116,10 @@ const initailStateProject = {
     projectName: ''
 };
 
-const reducers = combineReducers({
-    main : equipSword((state = initailStateMain) => state, 'main'),
-    project: equipSword((state = initailStateProject) => state, 'project')
-});
+const reducers = combineReducers(equipSword({
+    main : initailStateMain,
+    project: initailStateProject
+}));
 
 export default reducers;
 
