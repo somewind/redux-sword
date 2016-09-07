@@ -1,5 +1,5 @@
 ### What is Redux-Sword
-
+[![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)](https://www.npmjs.com/package/redux-sword)
 `Redux-Sword` is a tool for `Redux Reducer`, which can make it automatically processed, so you can code less with it.
 
 ### Installation
